@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1 class="text-center">Shops</h1>
+<div id="shops" class="container">
+  <table class="table table-bordered text-center table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Shop List</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @shops.each do |shop| %>
+        <tr style="text-align: center;">
+          <td>
+          <%= link_to shop, style:"text-decoration: none" do %>
+            <%= shop.name  %>
+          <% end %>
+          </td>
+          <td>
+            <%
+            status = shop.shop_schedules.find_by(day: Date.today.strftime("%A") )
+            %>
+            <%= status && status.day_status %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <table>
+</div>

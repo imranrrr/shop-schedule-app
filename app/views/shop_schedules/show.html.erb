@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @shop_schedule %>
+
+<div>
+  <%= link_to "Edit this shop schedule", edit_shop_schedule_path(@shop_schedule) %> |
+  <%= link_to "Back to shops", root_path %>
+
+  <%= button_to "Destroy this shop schedule", @shop_schedule, method: :delete %>
+</div>

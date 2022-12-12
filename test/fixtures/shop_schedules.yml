@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: 1
+  opening_time: 2022-12-12 12:59:03
+  half_time: 2022-12-12 12:59:03
+  open_after_half_time: 2022-12-12 12:59:03
+  closing_time: 2022-12-12 12:59:03
+  day_status: 1
+
+two:
+  day: 1
+  opening_time: 2022-12-12 12:59:03
+  half_time: 2022-12-12 12:59:03
+  open_after_half_time: 2022-12-12 12:59:03
+  closing_time: 2022-12-12 12:59:03
+  day_status: 1

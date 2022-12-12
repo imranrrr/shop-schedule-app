@@ -1,0 +1,55 @@
+ <%= form_with(model: shop_schedule) do |form| %>
+    <% if shop_schedule.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(shop_schedule.errors.count, "error") %> prohibited this shop_schedule from being saved:</h2>
+
+        <ul>
+          <% shop_schedule.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="d-flex flex-column justify-content-center align-items-center text-center">
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :day, style: "display: block; margin-right: 10px;" %>
+        <%= select(:shop_schedule, :day, [['Monday', "monday"], ['Tuesday', "tuesday"], ['Wednesday', "wednesday"], ['Thursday', "thursday"], ['Friday', "friday"], ['Saturday', "saturday"], ['Sunday', "sunday"]]) %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :opening_time, style: "display: block" %>
+        <%= form.time_field :opening_time %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :half_time, style: "display: block" %>
+        <%= form.time_field :half_time %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :open_after_half_time, style: "display: block" %>
+        <%= form.time_field :open_after_half_time %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :closing_time, style: "display: block" %>
+        <%= form.time_field :closing_time %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :day_status, style: "display: block" %>
+        <%= select(:shop_schedule, :day_status, [['Working Day', "working_day"], ['Closed', "closed"]]) %>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3" style="width: 25%">
+        <%= form.label :shop, style: "display: block" %>
+        <%= form.collection_select :shop_id, @shops.order(:id),:id,:name %>
+      </div>
+
+      <div class="mt-4">
+        <%= form.submit class:"btn btn-success" %>
+      </div>
+    </div>
+
+  <% end %>
