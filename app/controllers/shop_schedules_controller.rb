@@ -16,6 +16,7 @@ class ShopSchedulesController < ApplicationController
   end
 
   def edit
+    @shops = Shop.all
   end
 
   def create
