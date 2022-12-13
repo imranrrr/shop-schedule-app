@@ -13,45 +13,45 @@
 
     <div class="d-flex flex-column justify-content-center align-items-center text-center">
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :day, style: "display: block; margin-right: 10px;" %>
+        <%= form.label t(:day), style: "display: block; margin-right: 10px;" %>
         <%= form.select :day, ShopSchedule::DAYS, :selected => shop_schedule.day %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :opening_time, style: "display: block" %>
+        <%= form.label t(:opening_time), style: "display: block" %>
         <%= form.time_field :opening_time %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :half_time, style: "display: block" %>
+        <%= form.label t(:half_time), style: "display: block" %>
         <%= form.time_field :half_time %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :open_after_half_time, style: "display: block" %>
+        <%= form.label t(:after_half_time), style: "display: block" %>
         <%= form.time_field :open_after_half_time %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :closing_time, style: "display: block" %>
+        <%= form.label t(:closing_time), style: "display: block" %>
         <%= form.time_field :closing_time %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :day_status, style: "display: block" %>
+        <%= form.label t(:day_status), style: "display: block" %>
         <%= form.select :day_status, ShopSchedule::DAY_STATUS, :selected => shop_schedule.day_status %>
       </div>
 
       <div class="d-flex justify-content-between mt-3" style="width: 25%">
-        <%= form.label :shop, style: "display: block" %>
+        <%= form.label t(:shop), style: "display: block" %>
         <%= form.collection_select :shop_id, @shops.order(:id),:id,:name %>
       </div>
 
       <div class="mt-4">
-        <%= form.submit class:"btn btn-success" %>
+        <%= form.submit t(:update),class:"btn btn-success" %>
       </div>
       <div>
-        <%= link_to "Back to schedules", shop_schedules_path, class:"btn btn-sm" %>
+        <%= link_to t(:back_to_schedules), shop_schedules_path, class:"btn btn-sm" %>
       </div>
     </div>
 
