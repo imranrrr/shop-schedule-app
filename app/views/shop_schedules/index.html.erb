@@ -1,14 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Shop schedules</h1>
-
-<div id="shop_schedules">
-  <% @shop_schedules.each do |shop_schedule| %>
-    <%= render shop_schedule %>
-    <p>
-      <%= link_to "Show this shop schedule", shop_schedule %>
-    </p>
-  <% end %>
+<div class="container">
+  <h3 class="text-center">Shop schedules</h3>
+  <div id="shop_schedules">
+    <table class="table table-bordered table-striped ">
+      <thead class="table-dark">
+        <tr>
+          <th>Day</th>
+          <th>Opening Time</th>
+          <th>Half Time</th>
+          <th>After Half Time</th>
+          <th>Closing Time</th>
+          <th>Day Status</th>
+          <th>Shop</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @shop_schedules.each do |schedule| %>
+          <tr>
+            <td><%= schedule.day %></td>
+            <td><%= schedule.opening_time && schedule.opening_time.strftime("%H:%m:%S")  %></td>
+            <td><%= schedule.half_time && schedule.half_time.strftime("%H:%m:%S") %></td>
+            <td><%= schedule.open_after_half_time && schedule.open_after_half_time.strftime("%H:%m:%S") %></td>
+            <td><%= schedule.closing_time && schedule.closing_time.strftime("%H:%m:%S") %></td>
+            <td><%= schedule.day_status %></td>
+            <td><%= schedule.shop && schedule.shop.name %></td>
+            <td><%= link_to "Show", schedule, class:"btn btn-dark btn-sm" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<%= link_to "New shop schedule", new_shop_schedule_path %>
