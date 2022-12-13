@@ -19,8 +19,9 @@
         </div>
       <%# end %>
 
-      <div class="actions mt-4">
+      <div class="actions mt-4 d-flex flex-column">
         <%= f.submit "Log in", class:"btn btn-success" %>
+        <%= link_to  "Sign up", new_admin_registration_path, class:"btn btn-sm" %>
       </div>
     </div> 
   <% end %>

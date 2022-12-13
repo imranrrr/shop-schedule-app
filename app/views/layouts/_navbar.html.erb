@@ -26,6 +26,9 @@
         <span class="navbar-text">
             <%= button_to "Sign Out", destroy_admin_session_path, method: :delete, class:"btn" %>
         </span>
+        <span>
+          <%= link_to "Profile", edit_admin_registration_path(current_admin), class:"btn" %>
+        </span>
       <% end %>
     </div>
   </div>
