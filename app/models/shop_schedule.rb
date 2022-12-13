@@ -2,7 +2,7 @@ class ShopSchedule < ApplicationRecord
     belongs_to :shop, optional: true
 
     DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
-    DAY_STATUS = ['Working day', 'Closed']
+    DAY_STATUS = ['Working Day', 'Closed']
 
     enum day: {
     "Monday" => "monday", 
@@ -14,7 +14,7 @@ class ShopSchedule < ApplicationRecord
     "Sunday" => "sunday"
     }
     enum day_status: {
-        "Working Day" => "working_day",
+        "Working Day" => "Working Day",
         "Closed" => "closed"
     }
 end
